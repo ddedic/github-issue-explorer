@@ -12,5 +12,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Github Token
 
-Use this one:
-`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`
+GitHub Token is needed
