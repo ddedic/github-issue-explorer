@@ -15,10 +15,10 @@ const CommentsList: React.FC<CommentsListProps> = ({
 }: CommentsListProps) => {
   if (!loading && (!comments || !comments.length)) {
     return (
-      <div className="h-64 flex flex-1 bg-white shadow rounded-md items-center justify-center">
-        <div className="flex flex-col flex-1 h-64 items-center justify-center text-gray-300 ">
+      <div className="h-48 flex flex-1 bg-gray-100 rounded-md items-center justify-center">
+        <div className="flex flex-col flex-1 h-32 items-center justify-center text-gray-400 text-sm">
           <InformationCircleIcon className="text-gray-300 h-32" />
-          No comments found
+          Nobody has anything to say about this issue :(
         </div>
       </div>
     );

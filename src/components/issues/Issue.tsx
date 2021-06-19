@@ -33,7 +33,8 @@ const Issue: React.FC<IssueProps> = ({ issue, asTitle = false }: IssueProps) => 
           </p>
         </div>
       </div>
-      <div className="mt-2 sm:flex sm:justify-between">
+      <div
+        className={classNames('mt-2 sm:flex sm:justify-between', asTitle ? 'border-b pb-3' : '')}>
         <div className="sm:flex">
           <p className="flex items-center text-sm text-gray-500">
             <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-gray-100 text-gray-800">
@@ -69,11 +70,15 @@ const Issue: React.FC<IssueProps> = ({ issue, asTitle = false }: IssueProps) => 
             ))}
           </div>
         </div>
+
         <div className="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
           <ChatIcon className="flex-shrink-0 mr-1.5 h-6 w-6 text-gray-400" aria-hidden="true" />
           <p className="text-md">{issue.totalComments.count}</p>
         </div>
       </div>
+      {asTitle && (
+        <div className="mt-6 text-sm" dangerouslySetInnerHTML={{ __html: issue?.bodyHTML }}></div>
+      )}
     </div>
   );
 };

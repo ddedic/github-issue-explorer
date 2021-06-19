@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Img from 'next/image';
+import Link from 'next/link';
 import { StarIcon, ShareIcon, ExclamationIcon } from '@heroicons/react/solid';
 import GitHubLogo from './GitHubLogo';
 
@@ -69,9 +70,13 @@ const Header: React.FC<HeaderProps> = ({ user, repository, onChangeRepo }: Heade
         <div className="flex overflow-hidden h-32 w-full lg:h-48 ">
           <div className="flex flex-1 px-8 max-w-7xl mx-auto items-center">
             <div className="flex flex-1">
-              <div className="image relative overflow-hidden h-24 w-24 rounded-full ring-4 ring-white sm:h-32 sm:w-32 mr-4 items-center">
+              <div className="image relative overflow-hidden h-24 w-24 rounded-full ring-4 ring-white hover:ring-gray-200 sm:h-32 sm:w-32 mr-4 items-center">
                 {repository?.openGraphImageUrl && (
-                  <Img layout="fill" className="" src={repository?.openGraphImageUrl} alt="" />
+                  <Link href="/">
+                    <a href="#">
+                      <Img layout="fill" className="" src={repository?.openGraphImageUrl} alt="" />
+                    </a>
+                  </Link>
                 )}
               </div>
               <div className="title flex-col flex flex-1  justify-center">

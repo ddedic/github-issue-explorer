@@ -8,6 +8,7 @@ export const GET_ISSUE_QUERY = gql`
       issue(number: $number) {
         __typename
         ...issueBaseFragment
+        bodyHTML
         comments(first: 100) {
           pageInfo {
             startCursor

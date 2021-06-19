@@ -8,7 +8,7 @@ interface CommentProps {
 
 const Comment: React.FC<CommentProps> = ({ comment }: CommentProps) => {
   return (
-    <div className="flex mb-8 ">
+    <div className="flex mb-8">
       <div className="flex-shrink-0 mr-3">
         {comment?.author?.avatarUrl && (
           <Img
